@@ -1,0 +1,1 @@
+Put your 4 pictures here as 1.jpg, 2.jpg, 3.jpg, 4.jpg (square-ish photos look best, under 500 KB each).

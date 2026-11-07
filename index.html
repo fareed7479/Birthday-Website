@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="beam"></div><div class="beam r"></div><div id="glow"></div><canvas id="bg"></canvas><div class="frame"></div><svg class="bunting" id="bunt"></svg>
+<svg width="0" height="0" style="position:absolute"><defs>
+<g id="bear"><ellipse cx="50" cy="90" rx="26" ry="17" fill="#fff"/><circle cx="23" cy="25" r="13" fill="#fff"/><circle cx="23" cy="25" r="6" fill="#f5c6cc"/><circle cx="77" cy="25" r="13" fill="#fff"/><circle cx="77" cy="25" r="6" fill="#f5c6cc"/><ellipse cx="50" cy="52" rx="37" ry="33" fill="#fff"/><circle cx="37" cy="48" r="4" fill="#222"/><circle cx="63" cy="48" r="4" fill="#222"/><circle cx="28" cy="58" r="5" fill="#ffc2c8" opacity=".8"/><circle cx="72" cy="58" r="5" fill="#ffc2c8" opacity=".8"/><ellipse cx="50" cy="60" rx="10" ry="7" fill="#f1ece4"/><ellipse cx="50" cy="56" rx="4" ry="3" fill="#333"/><path d="M44 64q6 5 12 0" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"/></g>
+</defs></svg>
+
+<!-- 1 Lock -->
+<section class="screen on" id="p0">
+  <div class="ted" data-say="Psst… a surprise is waiting for you!"></div>
+  <div class="lock" id="lock"><div class="shackle"></div><div class="lbody"><div class="dials" id="dials"></div></div></div>
+  <h2>Guess the code</h2>
+  <p>Enter the 4-digit secret to unlock your surprise.</p>
+  <div class="pad" id="pad"></div>
+  <button class="btn ghost" id="hint" style="margin-top:12px;padding:6px 18px;font-size:15px">Need a hint?</button>
+  <p class="hand" id="hintTxt" style="margin-top:4px"></p>
+</section>
+
+<!-- Wait -->
+<section class="screen" id="pw">
+  <div class="ted" data-say="Shhh… don’t tell her I’m here."></div>
+  <p class="hand">someone crafted something magical for</p>
+  <h1 class="grad" id="nm3"></h1>
+  <p>The magic begins in</p>
+  <div class="cd" id="cd"></div>
+  <button class="btn ghost" data-go="2">Can’t wait? Peek now</button>
+</section>
+<!-- 2 Welcome -->
+<section class="screen" id="p1">
+  <div class="ted" data-say="Yay, you did it! Hi hi!"></div>
+  <p class="hand">it’s your day</p>
+  <h1>Happy Birthday,<br><span class="grad" id="nm"></span></h1>
+  <p>One more year of you being the best part of my days. Come, let’s celebrate.</p>
+  <button class="btn" data-go="3">Continue</button>
+</section>
+
+<!-- Yes/No -->
+<section class="screen" id="py">
+  <div class="ted" data-say="Be honest… are you?"></div>
+  <div class="duo"><img id="ynB" alt=""><img id="ynG" alt=""></div>
+  <h2>Are you excited for what’s next?</h2>
+  <div class="row" style="min-height:62px"><button class="btn" id="yes">Yes!</button><button class="btn ghost" id="no">No</button></div>
+</section>
+<!-- Balloons -->
+<section class="screen" id="pb">
+  <div class="ted" data-say="Pop them all!"></div>
+  <h2>Pop all 4 balloons</h2>
+  <p class="hand" id="cnt" style="margin:4px 0 0">0/4 popped</p>
+  <div class="bgrid" id="bgrid"></div>
+  <button class="btn" data-go="5" id="toCake" hidden>Next</button>
+</section>
+<!-- 3 Cake -->
+<section class="screen" id="p2">
+  <div class="ted" data-say="Chocolate! Your favourite!"></div>
+  <h2 id="cakeTitle"></h2>
+  <div class="cake">
+    <svg viewBox="0 0 260 230">
+      <defs><clipPath id="cc"><rect x="0" y="94" width="260" height="0"><animate id="rv" attributeName="height" values="0;84;84" keyTimes="0;.75;1" dur="3.4s" begin="indefinite" fill="freeze"/></rect></clipPath></defs>
+      <ellipse cx="130" cy="206" rx="120" ry="10" fill="#e8e2d8"/>
+      <rect x="40" y="112" width="180" height="92" rx="12" fill="#4a2716"/>
+      <rect x="40" y="152" width="180" height="10" fill="#f3dfc0"/>
+      <g clip-path="url(#cc)">
+        <path fill="#2a1208" d="M36 116Q36 102 54 102H206Q224 102 224 116V132Q218 132 218 146Q218 160 209 160Q200 160 200 144Q200 134 192 134Q184 134 184 152Q184 170 174 170Q164 170 164 142Q164 134 154 134H108Q98 134 98 150Q98 162 90 162Q82 162 82 144Q82 134 72 134Q64 134 64 154Q64 164 56 164Q48 164 48 142Q48 134 36 132Z"/>
+        <path d="M58 109H112M210 118V126" stroke="#8a5a3a" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+      </g>
+      <g id="spr" style="opacity:0;transition:opacity .8s"><circle cx="70" cy="112" r="2.5" fill="#ffd66b"/><circle cx="100" cy="116" r="2.5" fill="#ff9f8a"/><circle cx="150" cy="112" r="2.5" fill="#8fe3c8"/><circle cx="185" cy="117" r="2.5" fill="#ffd66b"/><circle cx="125" cy="110" r="2.5" fill="#f6f1ea"/><circle cx="205" cy="111" r="2.5" fill="#ff9f8a"/></g>
+      <g transform="rotate(-14 130 22)"><path d="M98 6H162L154 34H106Z" fill="#ffd66b"/></g>
+      <line x1="130" y1="34" x2="130" y2="112" stroke="#2a1208" stroke-width="9" stroke-linecap="round" stroke-dasharray="80" stroke-dashoffset="80" opacity="0">
+        <animate id="sd" attributeName="stroke-dashoffset" values="80;0;0" keyTimes="0;.25;1" dur="3s" begin="indefinite" fill="freeze"/>
+        <animate id="so" attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.8;1" dur="3s" begin="indefinite" fill="freeze"/>
+      </line>
+    </svg>
+    <div class="candles" id="candles"></div>
+  </div>
+  <p id="cakeHint"></p>
+  <button class="btn ghost" id="blow" hidden>Blow them out</button>
+  <button class="btn" data-go="6" id="toPhotos" hidden>See our memories</button>
+</section>
+
+<!-- 4 Memories -->
+<section class="screen" id="p3">
+  <div class="ted" data-say="Look at us! Tap the photo."></div>
+  <h2>Our memories</h2>
+  <div class="stack" id="stack"></div>
+  <p class="hand" id="count">tap the photo</p>
+  <button class="btn" data-go="7" id="toLetter" hidden>Next</button>
+</section>
+
+<!-- Wishes -->
+<section class="screen" id="pk">
+  <div class="ted" data-say="Everything here is true."></div>
+  <h2>A few things about you</h2>
+  <div class="wb" id="wb"><img id="wImg" alt=""></div>
+  <button class="btn" data-go="8">Next</button>
+</section>
+<!-- 5 Letter -->
+<section class="screen" id="p4">
+  <div class="ted" data-say="Shhh… private letter."></div>
+  <h2>A message from me</h2>
+  <div class="env" id="env"><div class="flap"></div><div class="seal">✦</div></div>
+  <p class="hand" id="envHint">tap to open</p>
+  <div class="card" id="lcard" hidden><p class="hand" style="min-height:0">dear <span id="nm2"></span>,</p><p id="msg"></p><p class="hand sign">your friend, <span id="from"></span></p></div>
+  <button class="btn" data-go="9" id="lnext" hidden>Next</button>
+</section>
+
+<!-- 6 Promise -->
+<section class="screen" id="p5">
+  <div class="ted" data-say="Tap each one to seal it!"></div>
+  <h2>Promise time</h2>
+  <div class="grp"><p class="hand" style="margin:0">I promise</p><div id="g1"></div></div>
+  <div class="grp"><p class="hand" style="margin:0">You promise</p><div id="g2"></div></div>
+  <button class="btn" data-go="10" id="toGift" hidden>Now, your gift</button>
+</section>
+
+<!-- 7 Gift -->
+<section class="screen" id="p6">
+  <div class="ted" data-say="Open it, open it!"></div>
+  <h2>One last thing…</h2>
+  <div class="box" id="box"><img class="pop" id="popImg" alt=""><div class="bx"></div><div class="lid"></div></div>
+  <p class="hand" id="tapTxt">tap the box</p>
+  <div class="reveal" id="rev">
+    <h1 class="grad">It’s ME!</h1>
+    <p>One huge friend, gift-wrapped (badly). Free delivery, no returns, no exchanges. Warranty: forever. Batteries not required, snacks are.</p>
+    <button class="btn ghost" id="replay">Replay</button>
+  </div>
+</section>
+
+<div id="wish"><p>Close your eyes<br>&amp; make a wish</p></div>
+<canvas id="conf"></canvas>
+<nav id="nav"></nav>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
